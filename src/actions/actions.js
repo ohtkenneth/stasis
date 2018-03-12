@@ -8,9 +8,9 @@ export function getAllEvents() {
 
 // action to set event marker on map when clicked
 // payload should contain event index
-export function getEvent(payload) {
+export function eventClicked(eventIndex) {
 	return {
-		type: 'GET_EVENT',
-		index: payload.index
+		type: 'EVENT_CLICKED',
+		index: eventIndex
 	};
 }

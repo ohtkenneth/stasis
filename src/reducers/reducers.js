@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-let allEvents = require(__dirname + '/../events/events.json');
+let allEvents = require('../events/events.json');
+
 
 let initialState = {
 	events: allEvents
@@ -14,19 +15,15 @@ function stasisApp(state = initialState, action) {
 			});
 			break;
 
-		case 'GET_EVENT':
-		console.log('is this working')
-		let temp = [];
-		temp.push(allEvents.find((event) => { return event.index = action.index }));
+		case 'EVENT_CLICKED':
+
 			return Object.assign({}, state, {
-				events: temp
+				clickedEvent: allEvents.find((event) => { return event.index === action.index; })
 			});
 			break;
 		default:
 		return state;
 	}
 }
-
-
 
 export default stasisApp;

@@ -4,11 +4,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import EventList from '../components/EventList';
-import { getAllEvents, getEvent } from '../actions/actions';
+import { getAllEvents, eventClicked } from '../actions/actions';
 
 const mapStateToProps = function(state) {
 	return {
-		events: state.events
+		events: state.events,
+		clickedEvent: state.clickedEvent
 	};
 };
 
@@ -19,8 +20,7 @@ const mapDispatchToProps = function(dispatch) {
 		},
 		// payload should have event index
 		onEventClick: function(payload) {
-			console.log('thisis payload: ' + payload.index);
-			dispatch(getEvent(payload))
+			dispatch(eventClicked(payload));
 		}
 	};
 };

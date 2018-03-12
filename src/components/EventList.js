@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
 import Event from './Event';
+import ToolTip from './ToolTip';
 
 class EventList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			currentEventIndex: ''
-		};
 	}
 	render() {
 		return (
@@ -17,12 +15,18 @@ class EventList extends Component {
 					{
 						this.props.events.map((event, idx) => {
 							return (
-								<li key={idx} id={event.index} onClick={(e) => { this.props.onEventClick({ index: e.target.id  }); }}>{event.name}</li>
+								//<li key={idx} id={event.index} onClick={(e) => { this.props.onEventClick({ index: e.target.id  }); }}>{event.name}</li>
+								<li key={idx} onClick={() => { this.props.onEventClick(event.index);}}>
+								{event.name}
+								</li>
 							)
 						})
 					}
 				</ul>
-				<button onClick={()=> { console.log(this.props) }}>click</button>
+				{
+					this.props.clickedEvent !== undefined ? <ToolTip event={this.props.clickedEvent}/> : <h4></h4>
+				}
+				<button onClick={()=> { console.log(this.props); }}>click</button>
 			</div>
 		);
 	}

@@ -1,4 +1,14 @@
 [
-	{ "index": "ca-1", "name": "Splash House", "city": "Palm Springs"},
-	{ "index": "ca-2", "name": "Coachella", "city": "Indio"}
+	{
+		"index": "ca-2",
+		"name": "Coachella",
+		"city": "Indio",
+		"venue": "Empire Polo Club, Indio, CA"
+	},
+	{
+		"index": "ca-1",
+		"name": "Splash House",
+		"city": "Palm Springs",
+		"venue": "The Saguaro Palm Springs, CA"
+	}
 ]
