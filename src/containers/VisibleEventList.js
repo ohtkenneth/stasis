@@ -8,8 +8,9 @@ import { getAllEvents, eventClicked } from '../actions/actions';
 
 const mapStateToProps = function(state) {
 	return {
-		events: state.events,
-		clickedEvent: state.clickedEvent
+		events: state.events.events,
+		clickedEvent: state.events.clickedEvent,
+		goToVenue: state.venue.goToVenue
 	};
 };
 

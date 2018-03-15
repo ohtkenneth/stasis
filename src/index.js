@@ -4,9 +4,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/App';
-import stasisApp from './reducers/reducers';
-
-let store = createStore(stasisApp);
+import rootReducer from './reducers/reducers';
+import store from './store';
 
 ReactDOM.render(
 	<Provider store={store}>
